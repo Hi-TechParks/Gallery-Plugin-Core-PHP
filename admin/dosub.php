@@ -687,12 +687,12 @@ if(isset($_SESSION['s_userName'])) {
 				}
 				
 				if(is_wordpress()){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?cms=$cms");
 					break;
 				}
 							
 				if(isset($_SESSION['s_userName'])){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?cms=$cms");
 					break;
 				}
 				
@@ -710,7 +710,7 @@ if(isset($_SESSION['s_userName'])) {
 				$requestedPassword = random_password();
 				
 				if(!ISSET($_SESSION['captcha'])){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=fieldBlank&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=fieldBlank&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
 					break;
 				}else{
 					$challenge=strtolower($_SESSION['captcha']);
@@ -726,19 +726,19 @@ if(isset($_SESSION['s_userName'])) {
 				}
 				
 				if($userEmailAddress=='' || $usersFirstName=='' || $usersLastName==''){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=fieldBlank&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=fieldBlank&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
 					break;
 				}else if($email_exists){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=emailTaken&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=emailTaken&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
 					break;
 				}else if( isset($users_array[$requestedUsername]) || $users_array[$requestedUsername]['username']==$requestedUsername){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=userTaken&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=userTaken&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
 					break;
 				}else if($requestedUsername!=$stripUsername){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=userChar&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=userChar&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
 					break;
 				}else if($challenge!=$response){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=codeMismatch&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=codeMismatch&requestedUsername=".urlencode($requestedUsername)."&usersFirstName=".urlencode($usersFirstName)."&usersLastName=".urlencode($usersLastName)."&userEmailAddress=".urlencode($userEmailAddress)."&cms=$cms");
 					break;
 				}else{
 				
@@ -760,10 +760,10 @@ if(isset($_SESSION['s_userName'])) {
 					$requestedPassword=urlencode("$requestedPassword");
 					
 					//send email with account info
-					send_email( strtolower(trim($userEmailAddress)), $core_settings['gallery_title']." - New User Registration", $usersFirstName.",\n\nYour account information for ".$core_settings['gallery_title']." is as follows.\n\nUsername: ".$requestedUsername."\nPassword: ".$requestedPassword."\n\nYou can login at: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php");
+					send_email( strtolower(trim($userEmailAddress)), $core_settings['gallery_title']." - New User Registration", $usersFirstName.",\n\nYour account information for ".$core_settings['gallery_title']." is as follows.\n\nUsername: ".$requestedUsername."\nPassword: ".$requestedPassword."\n\nYou can login at: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php");
 					
 					/* REDIRECT */
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?a=reg&error=success&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?a=reg&error=success&cms=$cms");
 				}
 				
 				break;
