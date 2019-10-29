@@ -175,7 +175,7 @@ if(isset($_SESSION['s_userName'])) {
 					header("Location: http://".$kickmeto);
 					break;
 				}else{
-					echo "<script type='text/javascript'>//setTimeout('parent.$.fn.colorbox.close();', 1250);  parent.$.fn.colorbox.close();</script>";
+					echo "<script type='text/javascript'>parent.$.fn.colorbox.close();</script>";
 				}
 
 				break;
