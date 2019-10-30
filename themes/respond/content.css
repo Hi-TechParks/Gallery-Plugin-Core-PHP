@@ -434,6 +434,69 @@ input:focus[type="search"] {
 
 
 
+/* Registration Form Styling
+ ---------------------------------------*/
+h1.reg_title{
+  	font-size: 1.5em;
+  	text-align: center;
+  	margin: 0 5px 5px 5px;
+}
+.reg_form{
+ 	width: 100%;
+ 	box-sizing: border-box;
+ 	margin: 0 auto;
+ 	margin-top: 30px;
+ }
+ .reg_form_line_item{
+ 	display: inline-block;
+ 	text-align: left;
+ }
+ .reg_form_line_item img{
+ 	margin-left: -5px;
+ }
+ .reg_form input[type="text"],  .reg_form input[type="password"], .reg_form textarea, .reg_form .reg_form_line_item{
+ 	font-size: 1.1em;
+ 	padding: 3px 5px 3px 5px;
+ 	width: calc(100% - 10px);
+ 	min-width: 200px;
+ 	max-width: 500px;
+ 	margin: 0 5px 15px 5px;
+ 	box-sizing: border-box;
+ }
+ .reg_form input[type="text"],  .reg_form input[type="password"], .reg_form textarea{
+ 	background: #f7f7f7;
+ 	border: 1px solid #ccc;
+ }
+ .reg_form .reg_form_line{
+ 	text-align: center;
+ }
+ .reg_form textarea{
+ 	text-align: left;
+ }
+ .reg_form .reg_form_line label{
+ 	font-weight: bold;
+ 	vertical-align: top;
+ }
+ .reg_notice{
+ 	width: 100%;
+ 	text-align: center;
+ }
+  .reg_notice p{
+ 	margin: 15px 5px 0px 5px;
+ }
+ .reg_notice span{
+ 	font-weight: bold;
+ }
+ .registrationError{
+ 	color: red;
+ 	margin: 30px 0 0 0;
+ }
+ .registrationSuccess{
+ 	color: green;
+ 	margin: 30px 0 0 0;
+ }
+
+
 
 
 /* FOOTER
@@ -527,6 +590,16 @@ input:focus[type="search"] {
 	}
 	.shim{
 		display: none;
+	}
+	.reg_form .reg_form_line label{
+		display: block;
+		clear: both;
+		text-align: left;
+		width: calc(100% - 10px);
+		min-width: 200px;
+		max-width: 500px;
+		margin: 0 auto;
+		padding: 5px 0 2px 0;
 	}
 }
 
@@ -670,6 +743,20 @@ input:focus[type="search"] {
 		max-width: 768px;
 		text-align: center;
 	}
+	.reg_form .reg_form_line label{
+		display: inline-block;
+		text-align: right;
+		width: 175px;
+		min-width: 175px;
+		max-width: 175px;
+		padding: 5px 0 0 0;
+	}
+	.reg_form.password_reset_form .reg_form_line label{
+		min-width: 300px;
+	}
+	.reg_form.password_reset_form input[type="text"]{
+		width: 50%;
+	}
 }
 
 /* Medium Devices, Desktops */
@@ -771,3 +858,78 @@ background-image:url("images/close.gif"); background-repeat:no-repeat; width: 58
 .cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=themes/respond/images/colorbox/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
 .cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=themes/respond/images/colorbox/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
 
+
+
+
+/*******************************
+********************************
+Css Added By Hi-Tech Parks Team
+*******************************
+********************************/
+
+.admin_form{
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+.admin_form input[type="text"], .admin_form input[type="email"], .admin_form input[type="password"], .admin_form textarea, .admin_form select{
+	font-size: 1.1em;
+	padding: 3px 5px 3px 5px;
+	width: calc(100% - 10px);
+	min-width: 200px;
+	max-width: 500px;
+	margin: 0 5px 15px 5px;
+	box-sizing: border-box;
+}
+.admin_form input[type="text"], .admin_form input[type="email"], .admin_form input[type="password"], .admin_form textarea, .admin_form select{
+	background: #f7f7f7;
+	border: 1px solid #ccc;
+}
+.admin_form .admin_form_row{
+	text-align: center;
+}
+.admin_form .admin_form_row label{
+	font-weight: bold;
+	vertical-align: top;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, Anything smaller than an iPhone */ 
+@media only screen and (min-width : 1px) {
+	.admin_form .admin_form_row label{
+		display: block;
+		clear: both;
+		text-align: left;
+		width: calc(100% - 10px);
+		min-width: 200px;
+		max-width: 500px;
+		margin: 0 auto;
+		padding: 5px 0 0 0;
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .admin_form .admin_form_row label{
+    	display: inline-block;
+    	text-align: right;
+    	width: 150px;
+    	min-width: 150px;
+    	max-width: 150px;
+    	padding: 5px 0 0 0;
+    }
+}
+
+
+/*******************************
+********************************
+Css Added By Hi-Tech Parks Team
+*******************************
+********************************/

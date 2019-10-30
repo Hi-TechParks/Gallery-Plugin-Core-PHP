@@ -1819,15 +1819,23 @@ if(isset($_SESSION['s_userName'])) {
 			}
 			
 			$core_content_temp.="<div class='login_form_container'>
-								<form method='post' action='login.php?action=login' class='login_form'>
+								<form method='post' action='login.php?action=login' class='admin_form'>
 									<input type='hidden' name='cms' value='{$cms}' />
 									<input type='hidden' name='vm' value='{$vm}' />
 									<input type='hidden' name='kickmeto' value='{$kickmeto}' />
 									<input type='hidden' name='action' value='login' />
 									<input type='hidden' name='location' value='{$loopvars->get_var("current_url")}' />
-									<div class='login_username_wrapper'><label>Username:</label> <input type='text' name='username' class='login_username_field' /></div>
-									<div class='login_password_wrapper'><label>Password:</label> <input type='password' name='password' class='login_password_field' /></div>
-									<div class='login_button_wrapper'><input type='submit' value='login' class='login_button' /></div>
+									<div class='admin_form_row'>
+										<label>Username:</label> 
+										<input type='text' name='username' class='login_username_field'/>
+									</div>
+									<div class='admin_form_row'>
+										<label>Password:</label> 
+										<input type='password' name='password' class='login_password_field'/>
+									</div>
+									<div class='admin_form_row'>
+										<input type='submit' value='login' class='login_button' />
+									</div>
 								</form>
 								<div class='login_password_recovery_wrapper'><a href='{$passwordRecoveryPath}' $target>Forgot Password?</a></div>
 								</div>";

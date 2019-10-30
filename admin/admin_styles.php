@@ -416,6 +416,9 @@ textarea:focus, input:focus[type="text"], input:focus[type="submit"] {
 	color : green;
 	margin: 30px 0 15px 0;
 }
+.reg_title {
+	text-align: center;
+}
 
 
 
