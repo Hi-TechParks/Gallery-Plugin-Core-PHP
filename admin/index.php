@@ -1445,15 +1445,15 @@ if(isset($_SESSION['s_userName'])) {
 	
 	        switch($error){
 		        case 'success':
-			        $core_content_temp.="<br/><br/><span class='registrationSuccess'>Success: Your password has been changed.</span><br/><br/><br/>";
+			        $core_content_temp.="<span class='registrationSuccess'>Success: Your password has been changed.</span>";
 			        break;
 			        		
 		        case 'wrongpass':
-			        $core_content_temp.="<br/><br/><span class='registrationError'>ERROR: The current password you entered was incorrect.</span><br/>";
+			        $core_content_temp.="<span class='registrationError'>ERROR: The current password you entered was incorrect.</span>";
 			        break;
 		
 		        case 'passMissMatch':
-			        $core_content_temp.="<br/><br/><span class='registrationError'>ERROR: The passwords you entered did not match.</span><br/>";
+			        $core_content_temp.="<span class='registrationError'>ERROR: The passwords you entered did not match.</span>";
 			        break;
 		
 		        case 'passChar':
@@ -1465,30 +1465,30 @@ if(isset($_SESSION['s_userName'])) {
 		        	break;
 		
 		        case 'fieldBlank':
-			        $core_content_temp.="<br/><br/><span class='registrationError'>ERROR: You left a field blank. ALL fields are mandatory.</span><br/>";
+			        $core_content_temp.="<span class='registrationError'>ERROR: You left a field blank. ALL fields are mandatory.</span>";
 			        break;
 	        }
 	
-	        $core_content_temp.="<form class='reg_form' method='post' action='dosub.php'>
+	        $core_content_temp.="<form class='admin_form' method='post' action='dosub.php'>
 		        						<input type='hidden' name='cms' value='{$cms}' />
 		        						<input type='hidden' name='action' value='chgpass' />
 		        						
-		        						<div class='reg_form_line'>
+		        						<div class='admin_form_row'>
 		        							<label>Current Password:</label>
 		        							<input type='password' name='currentPassword' value='' />
 		        						</div>
 		        						
-		        						<div class='reg_form_line'>
+		        						<div class='admin_form_row'>
 		        							<label>New Password:</label>
 		        							<input type='password' name='requestedPassword' />
 		        						</div>
 		        						
-		        						<div class='reg_form_line'>
+		        						<div class='admin_form_row'>
 		        							<label>Re-enter New Password:</label>
 		        							<input type='password' name='requestedPassword2' />
 		        						</div>
 		        						
-		        						<div class='reg_form_line'>
+		        						<div class='admin_form_row'>
 		        							<input type='submit' value='Change Password' />
 		        						</div>
 	        					   </form>

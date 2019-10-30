@@ -111,7 +111,7 @@ header('Content-type: text/css');
 	box-sizing: border-box;
 	margin: 0 auto;
 }
-.admin_form input[type="text"], .admin_form textarea, .admin_form select{
+.admin_form input[type="text"], .admin_form input[type="email"], .admin_form input[type="password"], .admin_form textarea, .admin_form select{
 	font-size: 1.1em;
 	padding: 3px 5px 3px 5px;
 	width: calc(100% - 10px);
@@ -120,7 +120,7 @@ header('Content-type: text/css');
 	margin: 0 5px 15px 5px;
 	box-sizing: border-box;
 }
-.admin_form input[type="text"], .admin_form textarea, .admin_form select{
+.admin_form input[type="text"], .admin_form input[type="email"], .admin_form input[type="password"], .admin_form textarea, .admin_form select{
 	background: #f7f7f7;
 	border: 1px solid #ccc;
 }
@@ -400,6 +400,21 @@ textarea:focus, input:focus[type="text"], input:focus[type="submit"] {
 	-moz-box-shadow: 0 0 8px rgba(206, 59, 69, .5);
 	box-shadow: 0 0 8px rgba(206, 59, 69, .5);
 	outline: none;
+}
+
+.registrationError {
+	float: left;
+	width: 100%;
+	display: block;
+	color : red;
+	margin: 30px 0 15px 0;
+}
+.registrationSuccess {
+	float: left;
+	width: 100%;
+	display: block;
+	color : green;
+	margin: 30px 0 15px 0;
 }
 
 
