@@ -458,12 +458,12 @@ if(isset($_SESSION['s_userName'])) {
 	    case 'chgpass':
 	
 				if(is_wordpress()){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?cms=$cms");
 					break;
 				}
 				
 		        if(!isset($_SESSION['s_userName'])){
-		            header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."index.php?cms=$cms");
+		            header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/index.php?cms=$cms");
 		            break;
 		        }
 		
@@ -476,15 +476,15 @@ if(isset($_SESSION['s_userName'])) {
 				
 		        //perform our error checking and provide the user with feedback
 		        if($currentPassword=='' || $requestedPassword=='' || $requestedPassword2==''){
-		        	header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?action=chgpass&error=fieldBlank&cms=$cms");
+		        	header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?action=chgpass&error=fieldBlank&cms=$cms");
 		        }else if( $users_array[$_SESSION['s_userName']]['password'] != crypt($currentPassword, $users_array[$_SESSION['s_userName']]['password']) ){
-		        	header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?action=chgpass&error=wrongpass&cms=$cms");
+		        	header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?action=chgpass&error=wrongpass&cms=$cms");
 		        }else if($requestedPassword!=$requestedPassword2){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?action=chgpass&error=passMissMatch&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?action=chgpass&error=passMissMatch&cms=$cms");
 				}else if($requestedPassword!=$stripPass){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?action=chgpass&error=passChar&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?action=chgpass&error=passChar&cms=$cms");
 				}else if(strlen($requestedPassword) < 8){
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?action=chgpass&error=passShort&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?action=chgpass&error=passShort&cms=$cms");
 				}else{
 				
 					$users_array[$_SESSION['s_userName']]['password']=crypt($requestedPassword);
@@ -492,7 +492,7 @@ if(isset($_SESSION['s_userName'])) {
 					write_user_data($users_array);
 			
 					/* REDIRECT */
-					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."admin/index.php?action=chgpass&error=success&cms=$cms");
+					header("Location: http://".$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF']))."/admin/index.php?action=chgpass&error=success&cms=$cms");
 				}
 				break;
 		
